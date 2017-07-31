@@ -77,9 +77,9 @@ if strcmp(evaluationDataset,'PF-dataset-PASCAL')==1
         downloadPFPascaldataset;
     end
     % evaluate on Proposal Flow dataset
-    resultsPF = evaluatePropFlowPascal(paths,evalopts);
+    resultsPF_PASCAL = evaluatePropFlowPascal(paths,evalopts);
 
-    display(['Mean PCK on Proposal Flow: ', num2str(resultsPF.meanPck)]);
+    display(['Mean PCK on Proposal Flow PASCAL: ', num2str(resultsPF_PASCAL.meanPck)]);
 
 end
 %% ====================================== Evaluate on TSS dataset
@@ -90,11 +90,14 @@ if strcmp(evaluationDataset,'TSS_CVPR2016')==1
 
     % download Proposal Flow dataset if needed
     if ~exist(fullfile(paths.pfPascalPath), 'file')
-        downloadPFPascaldataset;
+        downloadTSSdataset;
     end
     % evaluate on Proposal Flow dataset
-    resultsPF = evaluatePropFlowPascal(paths,evalopts);
-
-    display(['Mean PCK on Proposal Flow: ', num2str(resultsPF.meanPck)]);
+    resultsTSS = evaluateTSS(paths,evalopts);
+    
+    display(['Mean PCK on TSS-FG3Dcar: ', num2str(resultsTSS.meanPckFG3DCar)]);
+    display(['Mean PCK on TSS-PASCAL: ', num2str(resultsTSS.meanPckPASCAL)]);
+    display(['Mean PCK on TSS-JODS: ', num2str(resultsTSS.meanPckJODS)]);
+    display(['Mean PCK on TSS-All: ', num2str(resultsTSS.meanPckAll)]);
     
 end

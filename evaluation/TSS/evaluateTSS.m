@@ -147,14 +147,15 @@ RunEvaluation(fullfile(resultsDir,'FG3DCar'),fullfile(datasetDir,'FG3DCar'));
 RunEvaluation(fullfile(resultsDir,'PASCAL'),fullfile(datasetDir,'PASCAL'));
 RunEvaluation(fullfile(resultsDir,'JODS'),fullfile(datasetDir,'JODS'));
 
-results.scoresFG3DCar = importdata(fullfile(resultsDir,'FG3DCar','scores.csv'));
-results.scoresPASCAL = importdata(fullfile(resultsDir,'PASCAL','scores.csv'));
-results.scoresJODS = importdata(fullfile(resultsDir,'JODS','scores.csv'));
+results.pckFG3DCar = importdata(fullfile(resultsDir,'FG3DCar','scores.csv'));
+results.pckPASCAL = importdata(fullfile(resultsDir,'PASCAL','scores.csv'));
+results.pckJODS = importdata(fullfile(resultsDir,'JODS','scores.csv'));
 
-results.meanScoreFG3DCar = mean(scoresFG3DCar.data(1:end-2,7));
-results.meanScorePASCAL = mean(scoresPASCAL.data(1:end-2,7));
-results.meanScoreJODS = mean(scoresJODS.data(1:end-2,7));
+results.meanPckFG3DCar = mean(scoresFG3DCar.data(1:end-2,7));
+results.meanPckPASCAL = mean(scoresPASCAL.data(1:end-2,7));
+results.meanPckJODS = mean(scoresJODS.data(1:end-2,7));
 
+results.meanPckAll = mean([scoresFG3DCar.data(1:end-2,7);scoresPASCAL.data(1:end-2,7);scoresJODS.data(1:end-2,7)]);
 
 
 
