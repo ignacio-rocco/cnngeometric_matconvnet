@@ -26,7 +26,7 @@ evalopts.netmodelpath = paths.trainedModels; % define CNN model base path
 
 datasets = {'caltech-101','PF-dataset','PF-dataset-PASCAL','TSS_CVPR2016'};
 
-evaluationDataset = datasets{1}; 
+evaluationDataset = datasets{4}; 
 
 %% ======================================== Evaluate on Caltech-101 dataset
 if strcmp(evaluationDataset,'caltech-101')==1
@@ -89,7 +89,7 @@ if strcmp(evaluationDataset,'TSS_CVPR2016')==1
     paths.TSSPath = fullfile(paths.baseDir,'datasets','TSS_CVPR2016'); % PF dataset
 
     % download Proposal Flow dataset if needed
-    if ~exist(fullfile(paths.pfPascalPath), 'file')
+    if ~exist(fullfile(paths.TSSPath), 'file')
         downloadTSSdataset;
     end
     % evaluate on Proposal Flow dataset

@@ -1,4 +1,4 @@
-function results = evaluateTSSFun(paths,varargin)
+function results = evaluateTSS(paths,varargin)
 
 % TSS dataset base path
 datasetDir = paths.TSSPath;
@@ -151,9 +151,9 @@ results.pckFG3DCar = importdata(fullfile(resultsDir,'FG3DCar','scores.csv'));
 results.pckPASCAL = importdata(fullfile(resultsDir,'PASCAL','scores.csv'));
 results.pckJODS = importdata(fullfile(resultsDir,'JODS','scores.csv'));
 
-results.meanPckFG3DCar = mean(scoresFG3DCar.data(1:end-2,7));
-results.meanPckPASCAL = mean(scoresPASCAL.data(1:end-2,7));
-results.meanPckJODS = mean(scoresJODS.data(1:end-2,7));
+results.meanPckFG3DCar = mean(results.pckFG3DCar.data(1:end-2,7));
+results.meanPckPASCAL = mean(results.pckPASCAL.data(1:end-2,7));
+results.meanPckJODS = mean(results.pckJODS.data(1:end-2,7));
 
 results.meanPckAll = mean([scoresFG3DCar.data(1:end-2,7);scoresPASCAL.data(1:end-2,7);scoresJODS.data(1:end-2,7)]);
 

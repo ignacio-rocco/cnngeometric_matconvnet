@@ -1,1 +1,10 @@
 *.m~
+trained_models/
+results/
+matlab/matconvnet-1.0-beta20/
+matconvnet-1.0-beta20.tar.gz
+pax_global_header
+datasets/
+evaluation/TSS/TSS_CVPR2016_EvaluationKit.zip
+evaluation/TSS/TSS_CVPR2016_EvaluationKit-master/
+
