@@ -40,8 +40,8 @@ if ~isempty(thetaAff)
     agg = dagnn.AffineGridGenerator('Ho',hB,'Wo',wB);
     bs = dagnn.BilinearSampler; 
     grAff = agg.forward({thetaAff});
-    imAaff = bs.forward({substractMeanCNN(imA),grAff{1}});  
-    imAaff = substractMeanCNN(imAaff{1},1);
+    imAaff = bs.forward({subtractMeanCNN(imA),grAff{1}});  
+    imAaff = subtractMeanCNN(imAaff{1},1);
     imAaff_ = preprocessImage(imAaff); 
 end
 
@@ -63,12 +63,12 @@ if ~isempty(netTps)
 
     grTps = tgg.forward({thetaNN});
     if ~isempty(thetaAff)
-        imA_warped = bs.forward({substractMeanCNN(imAaff), grTps{1}});
+        imA_warped = bs.forward({subtractMeanCNN(imAaff), grTps{1}});
     else
-        imA_warped = bs.forward({substractMeanCNN(imA), grTps{1}});
+        imA_warped = bs.forward({subtractMeanCNN(imA), grTps{1}});
     end
 
-    imA_warped = uint8(substractMeanCNN(imA_warped{1},1));  
+    imA_warped = uint8(subtractMeanCNN(imA_warped{1},1));  
 else
     imA_warped = uint8(imAaff);
 end

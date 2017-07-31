@@ -14,9 +14,6 @@ paths.baseDir = pwd; % path to cnn_geometric main folder
 
 % trained models
 paths.trainedModels = fullfile(paths.baseDir,'trained_models');
-% default paths to datasets
-paths.pfPath = fullfile(paths.baseDir,'datasets','PF-dataset'); % PF dataset
-paths.caltech101Path = fullfile(paths.baseDir,'datasets','caltech-101'); % Caltech-101 dataset
 
 %% =============================================================== Training
 
@@ -27,8 +24,7 @@ paths.results = fullfile(paths.baseDir,'results');
 addpath(fullfile(paths.baseDir,'matlab'))
 addpath(fullfile(paths.baseDir,'matlab','auxiliary_functions'))
 addpath(fullfile(paths.baseDir,'trained_models'))
-addpath(fullfile(paths.baseDir,'evaluation','PF_willow'))
-addpath(fullfile(paths.baseDir,'evaluation','caltech-101'))
+addpath(genpath(fullfile(paths.baseDir,'evaluation')));
 addpath(fullfile(paths.baseDir,'training'))
 addpath(fullfile(paths.baseDir,'training','training_code'))
 
