@@ -72,11 +72,11 @@ if strcmp(evaluationDataset,'PF-dataset-PASCAL')==1
     % default path to dataset
     paths.pfPascalPath = fullfile(paths.baseDir,'datasets','PF-dataset-PASCAL'); % PF dataset
 
-    % download Proposal Flow dataset if needed
+    % download Proposal Flow PASCAL dataset if needed
     if ~exist(fullfile(paths.pfPascalPath), 'file')
         downloadPFPascaldataset;
     end
-    % evaluate on Proposal Flow dataset
+    % evaluate on Proposal Flow PASCAL dataset
     resultsPF_PASCAL = evaluatePropFlowPascal(paths,evalopts);
 
     display(['Mean PCK on Proposal Flow PASCAL: ', num2str(resultsPF_PASCAL.meanPck)]);
@@ -88,11 +88,11 @@ if strcmp(evaluationDataset,'TSS_CVPR2016')==1
     % default path to dataset
     paths.TSSPath = fullfile(paths.baseDir,'datasets','TSS_CVPR2016'); % PF dataset
 
-    % download Proposal Flow dataset if needed
+    % download TSS dataset if needed
     if ~exist(fullfile(paths.TSSPath), 'file')
         downloadTSSdataset;
     end
-    % evaluate on Proposal Flow dataset
+    % evaluate on TSS dataset
     resultsTSS = evaluateTSS(paths,evalopts);
     
     display(['Mean PCK on TSS-FG3Dcar: ', num2str(resultsTSS.meanPckFG3DCar)]);
