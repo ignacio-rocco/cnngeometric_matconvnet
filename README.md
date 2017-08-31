@@ -2,6 +2,8 @@
 
 ![](http://www.di.ens.fr/willow/research/cnngeometric/images/teaser.png)
 
+(![](http://www.di.ens.fr/willow/research/cnngeometric/images/new.gif) [PyTorch version released](https://github.com/ignacio-rocco/cnngeometric_pytorch))
+
 This is the implementation of the paper: 
 
 I. Rocco, R. Arandjelović and J. Sivic. Convolutional neural network architecture for geometric matching. CVPR 2017 [[website](http://www.di.ens.fr/willow/research/cnngeometric/)][[arXiv](https://arxiv.org/abs/1703.05593)]
