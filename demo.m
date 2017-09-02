@@ -29,7 +29,7 @@ netAff.vars(netAff.getVarIndex('theta')).precious=1 ;
 netTps.vars(netTps.getVarIndex('theta')).precious=1 ;
 
 % Proposal Flow dataset base path
-pfPath = paths.pfPath ;
+pfPath = fullfile(paths.baseDir,'datasets','PF-dataset'); % PF dataset
 
 % download Proposal Flow dataset
 if ~exist(fullfile(pfPath), 'file')
