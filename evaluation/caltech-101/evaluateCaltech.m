@@ -142,10 +142,12 @@ for idx=1:Npairs
         LTACCaff(idx)=accuracyAff.mean;
         LOCERRaff(idx)=accuracyAff.loc_err;   
         
-        [seg, accuracyAffTps] = TransferLabelAndEvaluateAccuracy(mskB, mskA, round(flowAffTps(:,:,1)), round(flowAffTps(:,:,2)));
-        IoUafftps(idx)=accuracyAffTps.iou;
-        LTACCafftps(idx)=accuracyAffTps.mean;
-        LOCERRafftps(idx)=accuracyAffTps.loc_err;
+        if ~isempty(evalopts.tpsnet)
+            [seg, accuracyAffTps] = TransferLabelAndEvaluateAccuracy(mskB, mskA, round(flowAffTps(:,:,1)), round(flowAffTps(:,:,2)));
+            IoUafftps(idx)=accuracyAffTps.iou;
+            LTACCafftps(idx)=accuracyAffTps.mean;
+            LOCERRafftps(idx)=accuracyAffTps.loc_err;
+        end
     catch
         validPairs(idx)=0;
     end

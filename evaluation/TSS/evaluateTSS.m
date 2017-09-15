@@ -155,7 +155,7 @@ results.meanPckFG3DCar = mean(results.pckFG3DCar.data(1:end-2,7));
 results.meanPckPASCAL = mean(results.pckPASCAL.data(1:end-2,7));
 results.meanPckJODS = mean(results.pckJODS.data(1:end-2,7));
 
-results.meanPckAll = mean([scoresFG3DCar.data(1:end-2,7);scoresPASCAL.data(1:end-2,7);scoresJODS.data(1:end-2,7)]);
+results.meanPckAll = mean([results.pckFG3DCar.data(1:end-2,7);results.pckPASCAL.data(1:end-2,7);results.pckJODS.data(1:end-2,7)]);
 
 
 
