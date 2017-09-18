@@ -14,7 +14,7 @@
 setup;
 
 % define path to training dataset
-paths.trValdatasetPath = '/sequoia/data1/iroccosp/datasets/instance/pascal-berkeley-voc11';
+paths.trValdatasetPath = fullfile(paths.baseDir,'datasets','pascal-voc11');
 
 % download the Pascal-VOC 2011 for training if not there
 if isempty(dir(paths.trValdatasetPath))
